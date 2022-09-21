@@ -17,15 +17,32 @@ ApplicationWindow{
         width: parent.width
 
         Rectangle{
+            id: myrectangle
             height: 160
-            color: "blue"
+            color: "grey"
+            width: parent.width
 
             Text{
+                id: mainText
                 text: "I am some regular text"
                 height: 50
                 width: parent.width
                 font.pixelSize: 12
+                horizontalAlignment: Text.AlignHCenter
+
             }
+
+            Button{
+                id: mainbutton
+                text: "Push Me"
+                anchors.top: mainText.bottom
+                onClicked: {
+                    if(myrectangle.color== "blue"){
+                        myrectangle.color = "white"
+                }else{
+                    myrectangle.color = "black"
+                }
+            }}
         }
     }
 }
